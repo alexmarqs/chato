@@ -27,4 +27,3 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [ ] Support html/markdown in messages
 - [ ] Add API rate limit (upstash, also check clerk api routes protection)
 - [ ] Add settings
-- [ ]
