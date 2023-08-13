@@ -1,5 +1,4 @@
 import { Chat } from '@/components/chat/Chat';
-import { sleep } from '@/lib/client/utils';
 import { auth } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 
