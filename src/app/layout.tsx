@@ -3,8 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Navbar } from '@/components/Navbar';
-import { ClerkProvider } from '@clerk/nextjs';
-import { Suspense } from 'react';
+import { Providers } from '@/components/Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,25 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider
-      appearance={{
-        variables: {
-          colorPrimary: 'black',
-          colorTextOnPrimaryBackground: 'white'
-        }
-      }}
-    >
-      <html lang="en" suppressHydrationWarning>
-        <body
-          className={cn(
-            'antialiased flex flex-col min-h-screen',
-            inter.className
-          )}
-        >
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          'antialiased flex flex-col min-h-screen',
+          inter.className
+        )}
+      >
+        <Providers>
           <Navbar />
-          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-        </body>
-      </html>
-    </ClerkProvider>
+          {children}
+        </Providers>
+      </body>
+    </html>
   );
 }
