@@ -1,5 +1,7 @@
 import { APIError } from '@/lib/server/api-error';
 
+export const runtime = 'edge'; // EDGE runtime
+
 async function handler(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
