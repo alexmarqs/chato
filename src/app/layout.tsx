@@ -12,18 +12,21 @@ export const metadata: Metadata = {
   description: 'An AI Chat Bot'
 };
 
+export const runtime = 'edge'; // EDGE runtime
+
 export default function RootLayout({
   children
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={cn(
           'antialiased flex flex-col min-h-screen',
           inter.className
         )}
+        suppressHydrationWarning={true}
       >
         <Providers>
           <Navbar />
