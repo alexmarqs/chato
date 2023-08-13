@@ -1,6 +1,6 @@
 # Chato. An AI Chat Bot.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) to play with AI.
+This is a [Next.js](https://nextjs.org/) to play with AI.
 
 Tech stack used:
 
