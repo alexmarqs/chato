@@ -5,6 +5,9 @@ import { Message } from 'ai';
 import { Button } from '../ui/Button';
 import { Icons } from '../ui/Icons';
 import React from 'react';
+import { MemoizedReactMarkdown } from './MemoizedReactMarkdown';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 
 type ChatMessageProps = {
   message: Message;
@@ -45,7 +48,17 @@ export const ChatMessage = ({
             : 'AL'}
         </AvatarFallback>
       </Avatar>
-      <p className="leading-relaxed self-center">{message.content}</p>
+      <MemoizedReactMarkdown
+        className="text-sm prose self-center break-words prose-p:leading-relaxed prose-pre:p-0"
+        remarkPlugins={[remarkGfm, remarkMath]}
+        components={{
+          p({ children }) {
+            return <p className="mb-2 last:mb-0">{children}</p>;
+          }
+        }}
+      >
+        {message.content}
+      </MemoizedReactMarkdown>
       <div className="absolute right-1 top-1 pr-3 pb-3">
         <span className="text-2xs text-slate-400">
           {message.createdAt &&

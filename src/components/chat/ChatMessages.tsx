@@ -17,7 +17,7 @@ export const ChatMessages = ({
   const scrollRef = React.useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+    scrollRef.current?.scrollIntoView(); // no smooth scroll to avoid slowness
   };
 
   useEffect(() => {

@@ -11,8 +11,6 @@ import { ChatMessages } from './ChatMessages';
 import { ChatHeader } from './ChatHeader';
 import { useChat } from 'ai/react';
 import { ScrollArea } from '../ui/ScrollArea';
-import { User } from '@clerk/nextjs/server';
-
 type ChatProps = {
   userFirstName: string | null;
   userAvatarUrl: string;
@@ -23,6 +21,7 @@ export const Chat = ({ userFirstName, userAvatarUrl }: ChatProps) => {
     useChat({
       api: '/api/chat'
     });
+  console.log('🚀 ~ file: Chat.tsx:21 ~ Chat ~ messages:', messages);
 
   return (
     <Card className="w-full max-w-[700px] h-full">

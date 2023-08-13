@@ -1,17 +1,19 @@
 import { Chat } from '@/components/chat/Chat';
-import { currentUser } from '@clerk/nextjs';
+import { sleep } from '@/lib/client/utils';
+import { auth } from '@clerk/nextjs';
+import { redirect } from 'next/navigation';
 
 export default async function Home() {
-  const user = await currentUser();
+  const { userId, sessionClaims } = auth();
 
-  // sleep for 1 second to simulate a slow network
-  // await new Promise((resolve) => setTimeout(resolve, 3000));
-
-  if (!user) return <div>Not logged in</div>;
+  if (!userId) return redirect('/sign-in');
 
   return (
     <div className="flex-1 flex flex-col justify-center items-center">
-      <Chat userFirstName={user?.firstName} userAvatarUrl={user?.imageUrl} />
+      <Chat
+        userFirstName={sessionClaims.firstName as string}
+        userAvatarUrl={sessionClaims.avatarUrl as string}
+      />
     </div>
   );
 }
