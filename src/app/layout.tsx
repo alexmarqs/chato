@@ -3,7 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Navbar } from '@/components/Navbar';
-import { Providers } from '@/components/Providers';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,18 +21,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          'antialiased flex flex-col min-h-screen',
-          inter.className
-        )}
-        suppressHydrationWarning={true}
+      <ClerkProvider
+        appearance={{
+          variables: {
+            colorPrimary: 'black',
+            colorTextOnPrimaryBackground: 'white'
+          }
+        }}
       >
-        <Providers>
+        <body
+          className={cn(
+            'antialiased flex flex-col min-h-screen',
+            inter.className
+          )}
+          suppressHydrationWarning={true}
+        >
           <Navbar />
           {children}
-        </Providers>
-      </body>
+        </body>
+      </ClerkProvider>
     </html>
   );
 }
