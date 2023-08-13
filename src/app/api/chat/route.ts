@@ -6,7 +6,7 @@ import { ZodError } from 'zod';
 
 export const runtime = 'edge'; // EDGE runtime
 
-export async function handler(req: Request) {
+async function handler(req: Request) {
   try {
     // Extract the `prompt` from the body of the request
     const requestBody = await req.json();

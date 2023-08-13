@@ -2,7 +2,18 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) to play with AI.
 
-## Getting Started
+Tech stack used:
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [PNPM](https://pnpm.io/)
+- [Vercel](https://vercel.com/)
+- [Upstash](https://upstash.com/)
+- [Clerk](https://clerk.dev/)
+- [Checkly](https://checklyhq.com/)
+- [OpenAI](https://openai.com/)
+
+## Run the project
 
 First, run the development server:
 
@@ -10,17 +21,17 @@ First, run the development server:
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## API Monitoring
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+We are using Checkly to monitor our API. Check out our [Checkly dashboard](https://app.checklyhq.com/teams/10001/monitors) for more details. We have an health check for the API and a check for the API response time.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Notes
 
-## Deploy on Vercel
+To generate api key / secrets you can run the following command:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+openssl rand -base64 32
+```
 
 ## TODO
 
