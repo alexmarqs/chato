@@ -17,16 +17,25 @@ type ChatProps = {
 };
 
 export const Chat = ({ userFirstName, userAvatarUrl }: ChatProps) => {
-  const { messages, input, handleInputChange, handleSubmit, isLoading } =
-    useChat({
-      api: '/api/chat'
-    });
-  console.log('🚀 ~ file: Chat.tsx:21 ~ Chat ~ messages:', messages);
+  const {
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    isLoading,
+    setMessages
+  } = useChat({
+    api: '/api/chat'
+  });
 
   return (
     <Card className="w-full max-w-[700px] h-full">
       <CardHeader>
-        <ChatHeader name={userFirstName} />
+        <ChatHeader
+          name={userFirstName}
+          chatInitiated={!!messages?.length}
+          onReset={() => setMessages([])}
+        />
       </CardHeader>
 
       <CardContent>
