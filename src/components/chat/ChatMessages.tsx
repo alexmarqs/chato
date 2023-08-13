@@ -25,7 +25,7 @@ export const ChatMessages = ({
   }, [messages]);
 
   return (
-    <div className="flex flex-col gap-2 h-[400px] w-full">
+    <div className="flex flex-col gap-2 h-[65vh] w-full">
       {!messages.length ? (
         <EmptyPlaceholder>
           <EmptyPlaceholder.Icon name="LogoEngineer" />

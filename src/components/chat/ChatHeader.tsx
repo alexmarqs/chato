@@ -17,7 +17,7 @@ export const ChatHeader = ({
   };
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between flex-wrap gap-y-2">
       <div className="space-y-2">
         <CardTitle>👋 Hey {name ? name : ''}</CardTitle>
         <CardDescription>
