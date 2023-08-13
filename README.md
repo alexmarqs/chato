@@ -23,7 +23,7 @@ pnpm dev
 
 ## API Monitoring
 
-We are using Checkly to monitor our API. Check out our [Checkly dashboard](https://app.checklyhq.com/teams/10001/monitors) for more details. We have an health check for the API and a check for the API response time.
+Soon...
 
 ## Notes
 
