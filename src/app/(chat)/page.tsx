@@ -2,7 +2,7 @@ import { Chat } from '@/components/chat/Chat';
 import { auth } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 
-export default function Home() {
+export default async function Home() {
   const { userId, sessionClaims } = auth();
 
   if (!userId) return redirect('/sign-in');

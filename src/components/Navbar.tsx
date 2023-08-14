@@ -18,7 +18,7 @@ export const Navbar = () => {
           {!isLoaded && !isSignedIn ? (
             <Skeleton className="h-8 w-8 rounded-full" />
           ) : (
-            <UserButton />
+            <UserButton afterSignOutUrl="/" />
           )}
         </Link>
       </div>
