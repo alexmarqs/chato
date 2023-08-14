@@ -13,6 +13,10 @@ Tech stack used:
 - [Checkly](https://checklyhq.com/)
 - [OpenAI](https://openai.com/)
 
+## API health check
+
+![API CHECK](https://api.checklyhq.com/v1/badges/checks/96e06094-a13c-42fb-b0be-ac1b472e2354?style=flat&theme=default)
+
 ## Run the project
 
 First, run the development server:
@@ -21,9 +25,6 @@ First, run the development server:
 pnpm dev
 ```
 
-## API Monitoring
-
-Soon...
 
 ## Notes
 
