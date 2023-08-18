@@ -2,7 +2,6 @@
 
 import { ChatMessageForm } from './ChatMessageForm';
 import { ChatMessages } from './ChatMessages';
-import { ChatHeader } from './ChatHeader';
 import { useChat } from 'ai/react';
 import { ScrollArea } from '../ui/ScrollArea';
 import { EmptyPlaceholder } from '../ui/EmptyPlaceholder';
