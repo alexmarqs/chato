@@ -9,7 +9,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Chato',
-  description: 'An AI Chat Bot'
+  description: 'An AI Chat Bot',
+  viewport:
+    'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
 };
 
 export const runtime = 'edge'; // EDGE runtime
