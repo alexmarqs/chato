@@ -24,7 +24,10 @@ export const ChatMessageForm = ({
   isLoading
 }: ChatMessageFormProps) => {
   return (
-    <form onSubmit={onSubmit} className="flex space-x-2 items-center w-full">
+    <form
+      onSubmit={onSubmit}
+      className="flex space-x-2 items-center w-full mx-auto max-w-2xl"
+    >
       <Input
         placeholder="How can I help you?"
         value={value}

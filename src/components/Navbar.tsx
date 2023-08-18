@@ -8,7 +8,7 @@ export const Navbar = () => {
   const { isLoaded, isSignedIn } = useUser();
 
   return (
-    <header className="z-40 w-full border-b-[1px] border-slate-100">
+    <header className="z-40 w-full border-b-[1px] border-slate-200 sticky top-0 left-0 right-0 bg-white">
       <div className="container">
         <Link
           href={'/'}

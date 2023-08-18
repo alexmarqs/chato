@@ -8,7 +8,7 @@ export default async function Home() {
   if (!userId) return redirect('/sign-in');
 
   return (
-    <div className="flex-1 flex flex-col justify-center items-center">
+    <div className="flex-1 flex flex-col">
       <Chat
         userFirstName={sessionClaims.firstName as string}
         userAvatarUrl={sessionClaims.avatarUrl as string}

@@ -25,27 +25,16 @@ export const ChatMessages = ({
   }, [messages]);
 
   return (
-    <div className="flex flex-col gap-2 h-[50vh] w-full">
-      {!messages.length ? (
-        <EmptyPlaceholder>
-          <EmptyPlaceholder.Icon name="LogoEngineer" />
-          <EmptyPlaceholder.Description>
-            No messages yet? Oh, please be chato. Ask!
-          </EmptyPlaceholder.Description>
-        </EmptyPlaceholder>
-      ) : (
-        <>
-          {messages.map((message) => (
-            <ChatMessage
-              key={message.id}
-              message={message}
-              userAvatar={userAvatar}
-              userName={userName}
-            />
-          ))}
-          <div ref={scrollRef} />
-        </>
-      )}
+    <div className="flex flex-col gap-2 h-[100vh - 3.5rem] w-full pb-[100px]">
+      {messages.map((message) => (
+        <ChatMessage
+          key={message.id}
+          message={message}
+          userAvatar={userAvatar}
+          userName={userName}
+        />
+      ))}
+      <div ref={scrollRef} />
     </div>
   );
 };
