@@ -25,7 +25,7 @@ export const Chat = ({ userFirstName, userAvatarUrl }: ChatProps) => {
   return (
     <div className="flex h-full w-full flex-1 bg-slate-50">
       {messages.length === 0 ? (
-        <EmptyPlaceholder className="h-full w-full self-center">
+        <EmptyPlaceholder className="h-full w-full self-center mb-[100px]">
           <EmptyPlaceholder.Icon name="LogoEngineer" />
           <EmptyPlaceholder.Description>
             No messages yet? Oh, please be chato. Ask!
