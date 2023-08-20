@@ -1,4 +1,14 @@
-import { Send, LucideProps, LucideIcon, Copy, Check } from 'lucide-react';
+import {
+  Send,
+  RotateCcw,
+  LucideProps,
+  LucideIcon,
+  Copy,
+  Check,
+  Bot,
+  PartyPopper,
+  Settings
+} from 'lucide-react';
 
 export type Icon = LucideIcon;
 
@@ -6,6 +16,10 @@ export const Icons = {
   Send: Send,
   Copy: Copy,
   Check: Check,
+  Settings: Settings,
+  Reset: RotateCcw,
+  Party: PartyPopper,
+  Bot: Bot,
   LogoEngineer: ({ ...props }: LucideProps) => (
     <svg
       width="960"

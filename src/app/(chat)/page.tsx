@@ -9,10 +9,7 @@ export default async function Home() {
 
   return (
     <div className="flex-1 flex flex-col">
-      <Chat
-        userFirstName={sessionClaims.firstName as string}
-        userAvatarUrl={sessionClaims.avatarUrl as string}
-      />
+      <Chat userAvatarUrl={sessionClaims.avatarUrl as string} />
     </div>
   );
 }
