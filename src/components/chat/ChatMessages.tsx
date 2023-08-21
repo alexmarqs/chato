@@ -1,5 +1,4 @@
 import { Message } from 'ai';
-import { EmptyPlaceholder } from '../ui/EmptyPlaceholder';
 import React, { useEffect } from 'react';
 import { ChatMessage } from './ChatMessage';
 
