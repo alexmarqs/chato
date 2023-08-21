@@ -14,6 +14,7 @@ Tech stack used:
 - [OpenAI](https://openai.com/) (using vercel ai sdk)
 - [Shadcn UI](https://ui.shadcn.com/)
 - [React Hot Toas](https://react-hot-toast.com/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
 
 ## API health check
 
@@ -24,6 +25,10 @@ Tech stack used:
 ```bash
 pnpm dev
 ```
+
+## Demo
+
+![](./docs//chato-demo.gif)
 
 ## Notes
 
