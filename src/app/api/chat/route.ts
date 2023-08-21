@@ -3,11 +3,29 @@ import { openai } from '@/lib/server/openai-client';
 import { APIError } from '@/lib/server/api-error';
 import { chatCompletionRequestSchema } from '@/lib/server/schema-validations';
 import { ZodError } from 'zod';
+import { ratelimit } from '@/lib/server/cache-client';
 
 export const runtime = 'edge'; // EDGE runtime
 
 async function handler(req: Request) {
   try {
+    const ip = req.headers.get('x-forwarded-for');
+    const { success, limit, reset, remaining } = await ratelimit.limit(
+      `ratelimit_${ip}`
+    );
+
+    if (!success) {
+      throw new APIError(
+        429,
+        'You have reached your request limit. Please calm down.',
+        {
+          'X-RateLimit-Limit': limit.toString(),
+          'X-RateLimit-Remaining': remaining.toString(),
+          'X-RateLimit-Reset': reset.toString()
+        }
+      );
+    }
+
     // Extract the `prompt` from the body of the request
     const requestBody = await req.json();
 
@@ -36,7 +54,8 @@ async function handler(req: Request) {
 
     if (error instanceof APIError) {
       return new Response(error.message || 'API Internal Server Error', {
-        status: error.status
+        status: error.status,
+        headers: error.headers
       });
     }
 

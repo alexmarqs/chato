@@ -11,20 +11,19 @@ Tech stack used:
 - [Upstash](https://upstash.com/)
 - [Clerk](https://clerk.dev/)
 - [Checkly](https://checklyhq.com/)
-- [OpenAI](https://openai.com/)
+- [OpenAI](https://openai.com/) (using vercel ai sdk)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [React Hot Toas](https://react-hot-toast.com/)
 
 ## API health check
 
 ![API CHECK](https://api.checklyhq.com/v1/badges/checks/96e06094-a13c-42fb-b0be-ac1b472e2354?style=flat&theme=default)
 
-## Run the project
-
-First, run the development server:
+## Run the project locally
 
 ```bash
 pnpm dev
 ```
-
 
 ## Notes
 
@@ -33,8 +32,3 @@ To generate api key / secrets you can run the following command:
 ```bash
 openssl rand -base64 32
 ```
-
-## TODO
-
-- [ ] Add API rate limit (upstash, also check clerk api routes protection)
-- [ ] Add settings

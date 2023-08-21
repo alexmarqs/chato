@@ -10,6 +10,7 @@ import { ActionBar } from '../ActionBar';
 import { Button } from '../ui/Button';
 import { Icons } from '../ui/Icons';
 import { ConfettiParty } from '../ConfettiParty';
+import { toast } from 'react-hot-toast';
 
 type ChatProps = {
   userAvatarUrl: string;
@@ -24,7 +25,13 @@ export const Chat = ({ userAvatarUrl }: ChatProps) => {
     isLoading,
     setMessages
   } = useChat({
-    api: '/api/chat'
+    api: '/api/chat',
+    onError: (err) => {
+      toast.error(err.message, {
+        position: 'bottom-right',
+        duration: 4000
+      });
+    }
   });
 
   return (
