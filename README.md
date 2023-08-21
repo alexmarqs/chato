@@ -28,7 +28,7 @@ pnpm dev
 
 ## Demo
 
-![](./docs//chato-demo.gif)
+<img src="./docs//chato-demo.gif" width="300" height="400"/>
 
 ## Notes
 
