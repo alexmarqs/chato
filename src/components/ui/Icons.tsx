@@ -7,7 +7,8 @@ import {
   Check,
   Bot,
   PartyPopper,
-  Settings
+  Settings,
+  MessageCircle
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -19,6 +20,7 @@ export const Icons = {
   Settings: Settings,
   Reset: RotateCcw,
   Party: PartyPopper,
+  Feedback: MessageCircle,
   Bot: Bot,
   LogoEngineer: ({ ...props }: LucideProps) => (
     <svg

@@ -15,11 +15,14 @@ export const Navbar = () => {
           className="flex h-14 items-center justify-between font-bold"
         >
           Chato.
-          {!isLoaded && !isSignedIn ? (
-            <Skeleton className="h-8 w-8 rounded-full" />
-          ) : (
-            <UserButton afterSignOutUrl="/" />
-          )}
+          <div className="flex items-center gap-3 text-slate-500">
+            {/* <FeedbackButton /> */}
+            {!isLoaded && !isSignedIn ? (
+              <Skeleton className="h-8 w-8 rounded-full" />
+            ) : (
+              <UserButton afterSignOutUrl="/" />
+            )}
+          </div>
         </Link>
       </div>
     </header>
