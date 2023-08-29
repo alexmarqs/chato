@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from './ui/Button';
-import { Textarea } from './ui/Textarea';
+import { Button } from '../ui/Button';
+import { Textarea } from '../ui/Textarea';
 
 export const FeedbackWidget = () => {
   return (

@@ -9,7 +9,7 @@ import { EmptyPlaceholder } from '../ui/EmptyPlaceholder';
 import { ActionBar } from '../ActionBar';
 import { Button } from '../ui/Button';
 import { Icons } from '../ui/Icons';
-import { ConfettiParty } from '../ConfettiParty';
+import { ConfettiParty } from '../confetti/ConfettiParty';
 import { toast } from 'react-hot-toast';
 
 type ChatProps = {

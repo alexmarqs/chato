@@ -1,5 +1,6 @@
-import { ConfettiButton } from './ConfettiButton';
-import { SettingsButton } from './SettingsButton';
+import { ConfettiButton } from './confetti/ConfettiButton';
+import { SettingsButton } from './settings/SettingsButton';
+
 import { Button } from './ui/Button';
 import { Icons } from './ui/Icons';
 

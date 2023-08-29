@@ -1,5 +1,5 @@
-import { Button } from './ui/Button';
-import { Icons } from './ui/Icons';
+import { Button } from '../ui/Button';
+import { Icons } from '../ui/Icons';
 import { useConfettiStore } from '@/stores/confetti';
 
 export const ConfettiButton = () => {

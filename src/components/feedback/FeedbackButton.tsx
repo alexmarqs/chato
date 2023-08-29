@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { FeedbackWidget } from './FeedbackWidget';
-import { Button } from './ui/Button';
-import { Icons } from './ui/Icons';
-import { Popover, PopoverContent, PopoverTrigger } from './ui/Popover';
+import { Button } from '../ui/Button';
+import { Icons } from '../ui/Icons';
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/Popover';
 
 export const FeedbackButton = () => {
   const [open, setOpen] = useState(false);

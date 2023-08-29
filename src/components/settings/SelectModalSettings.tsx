@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue
-} from './ui/Select';
+} from '../ui/Select';
 
 export const SelectModalSettings = () => {
   const { model, setModel } = useSettingsStore();

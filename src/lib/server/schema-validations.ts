@@ -12,3 +12,10 @@ export const chatCompletionRequestSchema = z.object({
 });
 
 export type ChatCompletionRequest = z.infer<typeof chatCompletionRequestSchema>;
+
+export const feedbackRequestSchema = z.object({
+  userEmail: z.string(),
+  feedback: z.string()
+});
+
+export type FeedbackRequest = z.infer<typeof feedbackRequestSchema>;

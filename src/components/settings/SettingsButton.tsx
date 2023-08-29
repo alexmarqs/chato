@@ -1,8 +1,8 @@
 import { SelectModalSettings } from './SelectModalSettings';
-import { Button } from './ui/Button';
-import { Icons } from './ui/Icons';
-import { Label } from './ui/Label';
-import { Popover, PopoverContent, PopoverTrigger } from './ui/Popover';
+import { Button } from '../ui/Button';
+import { Icons } from '../ui/Icons';
+import { Label } from '../ui/Label';
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/Popover';
 
 export const SettingsButton = () => {
   return (
