@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google';
 import { Navbar } from '@/components/Navbar';
 import { ClerkProvider } from '@clerk/nextjs';
 import { Toaster } from '@/components/Toaster';
+import { Providers } from '@/components/Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,26 +25,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ClerkProvider
-        appearance={{
-          variables: {
-            colorPrimary: 'black',
-            colorTextOnPrimaryBackground: 'white'
-          }
-        }}
-      >
-        <body
-          className={cn(
-            'antialiased flex flex-col min-h-screen',
-            inter.className
-          )}
-          suppressHydrationWarning={true}
+      <Providers>
+        <ClerkProvider
+          appearance={{
+            variables: {
+              colorPrimary: 'black',
+              colorTextOnPrimaryBackground: 'white'
+            }
+          }}
         >
-          <Toaster />
-          <Navbar />
-          {children}
-        </body>
-      </ClerkProvider>
+          <body
+            className={cn(
+              'antialiased flex flex-col min-h-screen',
+              inter.className
+            )}
+            suppressHydrationWarning={true}
+          >
+            <Toaster />
+            <Navbar />
+            {children}
+          </body>
+        </ClerkProvider>
+      </Providers>
     </html>
   );
 }

@@ -8,7 +8,7 @@ export const SettingsButton = () => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button size="sm" variant="outline">
+        <Button size="sm" variant="outline" aria-controls="radix-:Rb6rbdj9:">
           <Icons.Settings className="mr-2 h-4 w-4" /> Settings
         </Button>
       </PopoverTrigger>

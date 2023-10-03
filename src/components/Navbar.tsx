@@ -3,6 +3,7 @@
 import { UserButton, useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 import { Skeleton } from './ui/Skeleton';
+import { FeedbackButton } from './feedback/FeedbackButton';
 
 export const Navbar = () => {
   const { isLoaded, isSignedIn } = useUser();
@@ -16,7 +17,7 @@ export const Navbar = () => {
         >
           Chato.
           <div className="flex items-center gap-3 text-slate-500">
-            {/* <FeedbackButton /> */}
+            {isSignedIn && <FeedbackButton />}
             {!isLoaded && !isSignedIn ? (
               <Skeleton className="h-8 w-8 rounded-full" />
             ) : (

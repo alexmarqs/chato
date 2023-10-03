@@ -2,8 +2,13 @@ import { APIError } from '@/lib/server/api-error';
 import { feedbackRequestSchema } from '@/lib/server/schema-validations';
 import { ZodError } from 'zod';
 import { ratelimit } from '@/lib/server/cache-client';
+import { sendTransactionalEmail } from '@/lib/server/email';
+import { render } from '@react-email/render';
+import FeedbackEmail from '../../../../emails/FeedbackEmail';
+import FeedbackConfirmationEmail from '../../../../emails/FeedbackConfirmationEmail';
 
-export const runtime = 'edge'; // EDGE runtime
+// runtime needs to be node because we will send emails with nodemailer
+export const runtime = 'nodejs';
 
 async function handler(req: Request) {
   try {
@@ -29,11 +34,29 @@ async function handler(req: Request) {
     // Validate the request body for user feedback
     const { feedback, userEmail } = feedbackRequestSchema.parse(requestBody);
 
-    console.log('🚀 ~ file: route.ts:31 ~ handler ~ _user:', userEmail);
-    console.log('🚀 ~ file: route.ts:31 ~ handler ~ _feedback:', feedback);
-
     // Send email to developer (with the feedback)
+    const emailFeedbackHtml = render(
+      FeedbackEmail({ message: feedback, fromUsername: userEmail })
+    );
+
+    await sendTransactionalEmail(
+      process.env.DEVELOPER_EMAIL || '',
+      'New feedback from Chato',
+      emailFeedbackHtml
+    );
+
     // Send email to user (just a confirmation that we received the feedback)
+    const emailFeedbackConfirmationHtml = render(
+      FeedbackConfirmationEmail({ username: userEmail })
+    );
+
+    await sendTransactionalEmail(
+      userEmail,
+      'Thanks for your feedback!',
+      emailFeedbackConfirmationHtml
+    );
+
+    return Response.json({ success: true });
   } catch (error) {
     console.log(error);
 
