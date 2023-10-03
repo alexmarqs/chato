@@ -56,7 +56,12 @@ async function handler(req: Request) {
       emailFeedbackConfirmationHtml
     );
 
-    return Response.json({ success: true });
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
   } catch (error) {
     console.log(error);
 
