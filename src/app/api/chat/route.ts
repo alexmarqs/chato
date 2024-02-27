@@ -1,9 +1,9 @@
-import { OpenAIStream, StreamingTextResponse } from 'ai';
-import { openai } from '@/lib/server/openai-client';
 import { APIError } from '@/lib/server/api-error';
-import { chatCompletionRequestSchema } from '@/lib/server/schema-validations';
-import { ZodError } from 'zod';
 import { ratelimit } from '@/lib/server/cache-client';
+import { openai } from '@/lib/server/openai-client';
+import { chatCompletionRequestSchema } from '@/lib/server/schema-validations';
+import { OpenAIStream, StreamingTextResponse } from 'ai';
+import { ZodError } from 'zod';
 
 export const runtime = 'edge'; // EDGE runtime
 

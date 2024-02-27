@@ -16,19 +16,15 @@ Tech stack used:
 - [React Hot Toas](https://react-hot-toast.com/)
 - [Zustand](https://zustand-demo.pmnd.rs/)
 
-## API health check
-
-![API CHECK](https://api.checklyhq.com/v1/badges/checks/96e06094-a13c-42fb-b0be-ac1b472e2354?style=flat&theme=default)
-
 ## Run the project locally
 
 ```bash
 pnpm dev
 ```
 
-## Demo
+## Screenshots
 
-<img src="./docs//chato-demo.gif" width="300" height="400"/>
+<img src="./docs/demo.png" width="500" height="300"/>
 
 ## Notes
 
